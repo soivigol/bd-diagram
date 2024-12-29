@@ -22,13 +22,17 @@ A web-based tool that generates Entity-Relationship Diagrams (ERD) and documenta
 
 ### Installation
 
-1. Clone the repository:
+1. Access the project directly via GitHub Pages:
 
-```
-git clone https://github.com/your-repo/db-diagram.git
-```
+   Open your web browser and go to [soivigol.github.io/bd-diagram](https://soivigol.github.io/bd-diagram).
 
-2. Open `index.html` in your web browser or serve it using a local server.
+2. Alternatively, clone the repository and run it locally:
+
+   ```
+   git clone https://github.com/soivigol/bd-diagram.git
+   ```
+
+   Open `index.html` in your web browser or serve it using a local server.
 
 ### Usage
 
