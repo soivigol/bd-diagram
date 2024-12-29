@@ -1,0 +1,353 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+div {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+#diagram {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--bg-color);
+}
+
+.hidden {
+    display: none;
+}
+
+#apiKeyStatus {
+    display: flex;
+}
+
+#apiKeyContainer {
+    display: block;
+}
+
+#apiKeyStatus {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#apiKeyStatus span {
+    color: #059669;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.description-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.description-container th,
+.description-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.description-container th {
+    background-color: #f5f5f5;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.structure-text {
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    white-space: pre-wrap;
+}
+
+#diagramActions {
+    margin-top: 1rem;
+}
+
+#downloadBtn {
+    margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Loading state */
+button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+/* Mermaid diagram customization */
+.mermaid {
+    background-color: white;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+/* Mobile-first Database Structure Styles */
+.db-structure {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+}
+
+.entity-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.entity-title {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.entity-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.attributes, .relationships {
+    margin-top: 1rem;
+}
+
+.attributes h4, .relationships h4 {
+    color: #2c3e50;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.attribute-list, .relationship-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.attribute-list li, .relationship-list li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.attribute-list li:last-child, .relationship-list li:last-child {
+    border-bottom: none;
+}
+
+.attr-name {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.attr-type {
+    color: #7f8c8d;
+}
+
+.attr-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+    margin-left: 1rem;
+    font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+    .attr-description {
+        color: #999;
+    }
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+    .db-structure {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .db-structure {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .entity-card {
+        background: #1a1a1a;
+        border-color: #333;
+    }
+
+    .entity-title {
+        color: #fff;
+    }
+
+    .entity-description {
+        color: #ccc;
+    }
+
+    .attribute-list li, .relationship-list li {
+        border-bottom-color: #333;
+    }
+
+    .attr-name {
+        color: #3498db;
+    }
+
+    .attr-type {
+        color: #95a5a6;
+    }
+    .relationship-list li {
+        color: #95a5a6;
+    }
+    .attributes h4, .relationships h4 {
+        color: #1aa1fb;
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Update the existing #downloadBtn style */
+#downloadBtn {
+    margin-bottom: 0; /* Remove the existing margin */
+}
+
+/* Add transition for the copy button feedback */
+#copyHtmlBtn {
+    transition: background-color 0.2s ease;
+}
+
+#copyHtmlBtn:active {
+    background-color: var(--primary-color);
+    color: white;
+} 

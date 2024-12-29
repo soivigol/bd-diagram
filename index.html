@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DB Diagram Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>DB Diagram Generator</h2>
+    <div>
+        <label for="apiKey">OpenAI API Key</label>
+        <div id="apiKeyContainer" style="display: none;">
+            <input type="password" id="apiKey" placeholder="Enter your API key." />
+            <p><small>This API key is used to generate the diagram. We use the openAI API model gpt-4o, so we need a valid API key with a valid billing account. It is not stored or shared with anyone. It is saved in your browser's local storage.</small></p>
+            <button id="saveApiKeyBtn">Save API Key</button>
+        </div>
+        <div id="apiKeyStatus" style="display: none;">
+            <span>API Key is saved</span>
+            <button id="changeApiKeyBtn" class="secondary-button">Change API Key</button>
+        </div>
+    </div>
+    <div>
+        <label for="dbDescription">Database Description</label>
+        <textarea id="dbDescription" placeholder="Describe your database structure with a natural language. This will be used to generate for the diagram." rows="10"></textarea>
+        <button id="generateDiagramBtn">Generate Diagram</button>
+    </div>
+    <div id="diagram"></div>
+    <div id="diagramActions" style="display: none;">
+        <div class="button-group">
+            <button id="downloadBtn" class="secondary-button">Download Diagram</button>
+            <button id="copyHtmlBtn" class="secondary-button">Copy as Markdown</button>
+        </div>
+        <div id="structureText" class="structure-text"></div>
+    </div>
+    <div id="diagramDescription" class="description-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
