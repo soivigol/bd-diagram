@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateRequestBody = (description) => ({
         model: "gpt-4o",
         response_format: { type: "json_object" },
+        max_tokens: 4096,
         messages: [
             {
                 role: "system",
